@@ -29,8 +29,8 @@ const HalfAdderDashboard = observer(() => {
             />
           </HStack>
           <HStack>
-                <Bulb isLit={halfAdder.sum}/>
                 <Bulb isLit={halfAdder.carry}/>
+                <Bulb isLit={halfAdder.sum}/>
           </HStack>
       </VStack>
         <Button onClick={() => halfAdder.reset()}>
