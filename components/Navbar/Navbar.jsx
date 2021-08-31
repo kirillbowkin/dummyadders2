@@ -81,30 +81,30 @@ const Navbar = () => {
           </NextLink>
           <DrawerBody>
             <Box onClick={onClose}>
-              <Box>
+              <Box py={2}>
                 <NextLink href="/halfadder">
                   <Link
                     onClick={() => NavbarStore.setCurrentPage("Half Adder")}
                   >
-                    Half Adder
+                    <Text>Half Adder</Text>
                   </Link>
                 </NextLink>
               </Box>
-              <Box>
+              <Box py={2}>
                 <NextLink href="/fulladder">
                   <Link
                     onClick={() => NavbarStore.setCurrentPage("Full Adder")}
                   >
-                    Full Adder
+                    <Text>Full Adder</Text>
                   </Link>
                 </NextLink>
               </Box>
-              <Box>
+              <Box py={2}>
                 <NextLink href="/fourbitadder">
                   <Link
                     onClick={() => NavbarStore.setCurrentPage("Four Bit Adder")}
                   >
-                    Four Bit Adder
+                    <Text>Four Bit Adder</Text>
                   </Link>
                 </NextLink>
               </Box>

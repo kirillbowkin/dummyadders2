@@ -17,14 +17,14 @@ const BreadcrumbComponent = observer(({ currentPage }) => {
     );
   }
   return (
-    <Breadcrumb>
+    <Breadcrumb >
       <BreadcrumbItem
         onClick={() => {
           NavbarStore.setCurrentPage("/");
         }}
       >
         <NextLink href="/">
-          <Text cursor="pointer" fontSize="2xl">
+          <Text cursor="pointer" fontSize={["sm", null, "xl", "2xl"]}>
             Dummy Adders
           </Text>
         </NextLink>
