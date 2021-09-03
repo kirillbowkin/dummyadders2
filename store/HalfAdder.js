@@ -11,12 +11,8 @@ class HalfAdder {
   }
 
   add(a, b) {
-    // console.log("a", a);
-    // console.log("b", b);
     this.sum = a ^ b;
     this.carry = a && b;
-    // console.log("sum", this.sum);
-    // console.log("carry", this.carry);
   }
 
   setA(A) {

@@ -1,8 +1,5 @@
-import { Text, VStack, Link, UnorderedList, ListItem } from "@chakra-ui/react";
-
+import { Link, ListItem, Text, UnorderedList, VStack } from "@chakra-ui/react";
 import NextLink from "next/link";
-
-import NavbarStore from "../store/NavbarStore";
 
 export default function Home() {
   return (
@@ -18,21 +15,21 @@ export default function Home() {
       <UnorderedList>
         <ListItem>
           <NextLink href="/halfadder">
-            <Link onClick={() => NavbarStore.setCurrentPage("Half Adder")}>
+            <Link>
               <Text fontSize="xl">Half Adder</Text>
             </Link>
           </NextLink>
         </ListItem>
         <ListItem>
           <NextLink href="/fulladder">
-            <Link onClick={() => NavbarStore.setCurrentPage("Full Adder")}>
+            <Link>
               <Text fontSize="xl">Full Adder</Text>
             </Link>
           </NextLink>
         </ListItem>
         <ListItem>
           <NextLink href="/fourbitadder">
-            <Link onClick={() => NavbarStore.setCurrentPage("Four Bit Adder")}>
+            <Link>
               <Text fontSize="xl">Four Bit Adder</Text>
             </Link>
           </NextLink>

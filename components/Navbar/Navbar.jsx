@@ -1,35 +1,24 @@
 import {
   Box,
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
   HStack,
   IconButton,
   Link,
   Text,
+  useColorMode,
   useColorModeValue,
+  useDisclosure,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import {
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  useDisclosure,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  Button,
-  useColorMode,
-} from "@chakra-ui/react";
-
-import NextLink from "next/link";
+import { MdKeyboardArrowLeft } from "react-icons/md";
 import BreadcrumbComponent from "./BreadcrumbComponent";
-import NavbarStore from "../../store/NavbarStore";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
-
-import {MdKeyboardArrowLeft} from 'react-icons/md'
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -37,6 +26,12 @@ const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   const bg = useColorModeValue("gray.200", "gray.700");
+
+  const currentPageByPath = {
+    halfadder: "Half Adder",
+    fulladder: "Full Adder",
+    fourbitadder: "Four Bit Adder",
+  };
 
   return (
     <>
@@ -55,7 +50,7 @@ const Navbar = () => {
             aria-label="Menu"
             onClick={onOpen}
           />
-          <BreadcrumbComponent currentPage={NavbarStore.currentPage} />
+          <BreadcrumbComponent currentPage={currentPageByPath} />
         </HStack>
         <HStack>
           <ColorModeSwitcher />
@@ -68,14 +63,11 @@ const Navbar = () => {
             <DrawerHeader
               borderBottomWidth="1px"
               cursor="pointer"
-              onClick={() => {
-                NavbarStore.setCurrentPage("/");
-                onClose();
-              }}
+              onClick={onClose}
             >
-              <HStack alignItems='center' justifyContent='space-between'>
+              <HStack alignItems="center" justifyContent="space-between">
                 <Text>Dummy Adders</Text>
-                <IconButton icon={<MdKeyboardArrowLeft />} aria-label="Back"/>
+                <IconButton icon={<MdKeyboardArrowLeft />} aria-label="Back" />
               </HStack>
             </DrawerHeader>
           </NextLink>
@@ -83,27 +75,21 @@ const Navbar = () => {
             <Box onClick={onClose}>
               <Box py={2}>
                 <NextLink href="/halfadder">
-                  <Link
-                    onClick={() => NavbarStore.setCurrentPage("Half Adder")}
-                  >
+                  <Link>
                     <Text>Half Adder</Text>
                   </Link>
                 </NextLink>
               </Box>
               <Box py={2}>
                 <NextLink href="/fulladder">
-                  <Link
-                    onClick={() => NavbarStore.setCurrentPage("Full Adder")}
-                  >
+                  <Link>
                     <Text>Full Adder</Text>
                   </Link>
                 </NextLink>
               </Box>
               <Box py={2}>
                 <NextLink href="/fourbitadder">
-                  <Link
-                    onClick={() => NavbarStore.setCurrentPage("Four Bit Adder")}
-                  >
+                  <Link>
                     <Text>Four Bit Adder</Text>
                   </Link>
                 </NextLink>
