@@ -30,7 +30,7 @@ const Navbar = () => {
   const currentPageByPath = {
     halfadder: "Half Adder",
     fulladder: "Full Adder",
-    fourbitadder: "Four Bit Adder",
+    eightbitadder: "Eight Bit Adder",
   };
 
   return (
@@ -88,9 +88,9 @@ const Navbar = () => {
                 </NextLink>
               </Box>
               <Box py={2}>
-                <NextLink href="/fourbitadder">
+                <NextLink href="/eightbitadder">
                   <Link>
-                    <Text>Four Bit Adder</Text>
+                    <Text>Eight Bit Adder</Text>
                   </Link>
                 </NextLink>
               </Box>

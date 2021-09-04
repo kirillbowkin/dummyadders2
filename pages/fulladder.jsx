@@ -12,7 +12,7 @@ const FullAdder = () => {
     <VStack w="full" alignItems="center" justifyContent="space-evenly" p={4}>
       <VStack>
         <Text fontSize="2xl" mb={4} fontWeight="semibold">
-          Half Adder
+          Full Adder
         </Text>
         <Box w={[80, "full"]} overflow="auto">
           {isCircuit ? (

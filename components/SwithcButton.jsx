@@ -8,6 +8,7 @@ export const SwitchButton = observer(({ onClickHandler, isActive }) => {
     <IconButton
       onClick={onClickHandler}
       icon={isActive ? <IoMdRadioButtonOn /> : <IoMdRadioButtonOff />}
+      w={8}
     />
   );
 });

@@ -28,9 +28,9 @@ export default function Home() {
           </NextLink>
         </ListItem>
         <ListItem>
-          <NextLink href="/fourbitadder">
+          <NextLink href="/eightbitadder">
             <Link>
-              <Text fontSize="xl">Four Bit Adder</Text>
+              <Text fontSize="xl">Eight Bit Adder</Text>
             </Link>
           </NextLink>
         </ListItem>
