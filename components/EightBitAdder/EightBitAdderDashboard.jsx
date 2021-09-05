@@ -27,7 +27,6 @@ const EightBitAdderDashboard = observer(() => {
               {eightBitAdder.A.map((_, idx) => (
                 <Box key={idx} mx={2}>
                   <SwitchButton
-                    key={idx}
                     isActive={eightBitAdder.A[idx]}
                     onClickHandler={() => {
                       eightBitAdder.setA(idx, !eightBitAdder.A[idx]);
@@ -44,7 +43,6 @@ const EightBitAdderDashboard = observer(() => {
               {eightBitAdder.B.map((_, idx) => (
                 <Box key={idx} mx={2}>
                   <SwitchButton
-                    key={idx}
                     isActive={eightBitAdder.B[idx]}
                     onClickHandler={() => {
                       eightBitAdder.setB(idx, !eightBitAdder.B[idx]);
@@ -60,7 +58,7 @@ const EightBitAdderDashboard = observer(() => {
             <Flex flexDir="row-reverse">
               {eightBitAdder.S.map((_, idx) => (
                 <Box key={idx} m={3}>
-                  <Bulb key={idx} isLit={eightBitAdder.S[idx]} />
+                  <Bulb isLit={eightBitAdder.S[idx]} />
                 </Box>
               ))}
             </Flex>
